@@ -35,14 +35,14 @@ function Welcome() {
 
 }
 
- const SingleBook = ({ book }) => {
+const SingleBook = ({ book }) => {
 
     const [selected, setSelected] = useState(false)
 
     return (
         <Card className={`book-card ${selected ? "selected" : ""}`} // L'operatore ternario è una scorciatoia per il costrutto "if-else" e si legge così: se "selected", è true viene aggiunta la classe selected se è false viene aggiunta una stringa vuota;
-        onClick={() => setSelected (!selected)}
-        
+            onClick={() => setSelected(!selected)}
+
         >
             <div className='img-container'
                 style={{
@@ -57,10 +57,17 @@ function Welcome() {
             </div>
             <Card.Body>
                 <Card.Title>{book.title}</Card.Title>
-                <div className='d-flex justify-content-center'>
-                    <small><Card.Text>{book.category}</Card.Text></small>
+
+                <div className='d-flex justify-content-center mb-2'>
+                    <small><Card.Text> {book.category}</Card.Text></small>
                 </div>
-                <Card.Text>{book.price}</Card.Text>
+
+                <strong><Card.Text className='fw-bolder mb-2 fs-5'>{book.price}€</Card.Text></strong>
+
+                <div className='d-flex justify-content-center'>
+                    <small><Card.Text>ASIN: {book.asin}</Card.Text></small>
+                </div>
+
             </Card.Body>
         </Card>
     )
