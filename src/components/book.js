@@ -31,7 +31,7 @@ function AllTheBooks() {
                 {filteredBooks.map((book) => {
                     return (
                         <>
-                            <Col className="d-flex mb-4" key={book.asin} sm={6} md={4} lg={3} xl={3}>
+                            <Col className="d-flex mb-4 px-0" key={book.asin} sm={6} md={4} lg={3} xl={3}>
                                 <SingleBook book={book} />
                             </Col>
                         </>
